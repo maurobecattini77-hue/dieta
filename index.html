@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
 <title>La dieta di Mauro</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,7 +109,7 @@
 
   /* ricetta della colazione */
   .ingr { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 0; }
-  .ingr li { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; border-bottom: 1px dashed var(--line-strong); max-width: none; margin: 0; }
+  .ingr li { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; border-bottom: 1px solid var(--line-strong); max-width: none; margin: 0; }
   .ingr li:last-child { border-bottom: none; }
   .ingr .q { color: var(--ink-2); text-align: right; }
   .tot { font-family: var(--mono); font-size: 13px; color: var(--ink-3); }
@@ -185,14 +188,14 @@
   .aisle { break-inside: avoid; margin: 0 0 22px; }
   .aisle .an { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1.5px solid var(--ink); padding-bottom: 4px; margin-bottom: 4px; }
   .aisle ul { list-style: none; padding: 0; margin: 0; }
-  .aisle li { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px dotted var(--line-strong); font-size: 15px; }
+  .aisle li { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--line-strong); font-size: 15px; }
   .aisle li .q { color: var(--ink-2); text-align: right; }
   .aisle li.st { color: var(--ink-3); }
 
   /* equivalenze */
   .swap { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; }
   .swap .box ul { list-style: none; padding: 0; }
-  .swap .box li { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dotted var(--line-strong); padding: 5px 0; margin: 0; font-size: 15px; }
+  .swap .box li { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--line-strong); padding: 5px 0; margin: 0; font-size: 15px; }
   .swap .box li:last-child { border-bottom: none; }
 
   .no-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; list-style: none; padding: 0; margin: 0; }
@@ -209,56 +212,60 @@
     section { break-before: auto; }
     .day, .rc, .box, .aisle { break-inside: avoid; }
   }
-</style>
 
+  /* aggiunte del 26/09/2026 */
+  .glance a, .meal a { color: inherit; text-decoration-color: var(--olive); text-decoration-thickness: 1.5px; }
+  .glance td a { font-weight: 700; }
+  .recipes { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  a.rc { display: block; text-decoration: none; color: inherit; }
+  a.rc:hover { border-color: var(--olive); }
+  a.rc .rq { display: block; font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+  a.rc .rn { display: block; font-family: var(--display); font-weight: 700; font-size: 18.5px; line-height: 1.2; color: var(--olive); margin-bottom: 6px; }
+  a.rc .rt { display: block; font-size: 14px; color: var(--ink-2); }
+  .online { font-size: 14.5px; color: var(--ink-2); margin-top: 12px; }
+  .ingr .q, .aisle li .q, .swap .box li .q { white-space: normal; }
+  .aisle li .q, .swap .box li .q { flex: 0 1 45%; }
+</style>
+</head>
+<body>
 <div class="wrap">
 
 <header class="top">
-  <div class="eyebrow">Dieta settimanale &middot; dall'11 settembre 2026</div>
-  <h1>La dieta <em>di Mauro</em></h1>
-  <p class="lede">Poco sale, pochi zuccheri e i grassi giusti, per il peso, la pressione, il colesterolo e la glicemia. Gli sgarri sono già dentro: due volte pasta e cappuccio, un aperitivo e un pasto libero a settimana, al massimo.</p>
-  <nav class="toc" aria-label="Indice">
-    <a href="#numeri">I numeri</a>
-    <a href="#regole">Le regole</a>
-    <a href="#colazione">La colazione</a>
-    <a href="#settimana">La settimana</a>
-    <a href="#sgarri">Gli sgarri</a>
-    <a href="#rientro">Il giorno del rientro</a>
-    <a href="#domenica">La domenica in cucina</a>
-    <a href="#ricette">Le ricette</a>
-    <a href="#spesa">La spesa</a>
-    <a href="#scambi">Gli scambi</a>
-    <a href="#misure">Da qui in avanti</a>
+  <div class="eyebrow">Dieta settimanale &middot; rifatta il 26 settembre 2026</div>
+  <h1>La dieta di <em>Mauro</em></h1>
+  <p class="lede">Poco sale, pochi zuccheri e i grassi giusti, per il peso, la pressione, il colesterolo e la glicemia. Senza forno e con pochi attrezzi. La sera si cucina per due, così il pranzo delle 14 è pronto in cinque minuti. Gli sgarri li metti tu, dove vuoi.</p>
+  <nav class="toc">
+    <a href="#numeri">I numeri</a><a href="#regole">Le regole</a><a href="#colazione">La colazione</a>
+    <a href="#settimana">La settimana</a><a href="#ricette">Le ricette</a><a href="#sgarri">Gli sgarri</a>
+    <a href="#rientro">Il giorno del rientro</a><a href="#domenica">La domenica</a><a href="#spesa">La spesa</a>
+    <a href="#scambi">Gli scambi</a><a href="#avanti">Da qui in avanti</a>
   </nav>
 </header>
 
 <section id="numeri">
   <h2>I numeri da cui partiamo</h2>
-  <p class="intro">Sono stime fatte con la formula standard, quella di Mifflin-St Jeor, sui tuoi dati: 90 kg, 175 cm, quasi 50 anni, tre volte in palestra e due di camminata. I conti veri li fa la bilancia nelle prime quattro settimane. Se il peso non scende, taglio le porzioni.</p>
+  <p class="intro">Sono stime fatte con la formula standard, quella di Mifflin-St Jeor, sui tuoi dati: 86,7 kg, 175 cm, quasi 50 anni, tre volte in palestra e due di camminata. I conti veri li fa il tempo: se dopo qualche settimana il peso non scende, si tagliano le porzioni.</p>
   <div class="figures">
-    <div class="fig"><div class="k">Punto di partenza</div><div class="v">29,4<small>BMI</small></div><div class="n">Sovrappeso. La soglia dell'obesità è 30, quindi ci sei vicino.</div></div>
-    <div class="fig"><div class="k">Quanto consumi</div><div class="v">2.500<small>kcal</small></div><div class="n">Al giorno, con il movimento previsto. A riposo il corpo ne brucia circa 1.750.</div></div>
-    <div class="fig"><div class="k">Quanto mangi</div><div class="v">1.700<small>kcal</small></div><div class="n">Nei giorni normali, un po' di più quando vai in palestra. Gli sgarri sono conteggiati a parte.</div></div>
-    <div class="fig"><div class="k">Calo atteso</div><div class="v">0,5<small>kg/sett.</small></div><div class="n">Con tutti gli sgarri. Senza il pasto libero, circa 0,7. Le prime due settimane di più, perché scende anche l'acqua.</div></div>
-    <div class="fig"><div class="k">Primo traguardo</div><div class="v">81<small>kg</small></div><div class="n">Meno 9 kg, cioè il 10%. Ci arrivi tra gennaio e febbraio 2027.</div></div>
-    <div class="fig"><div class="k">Giro vita</div><div class="v">&lt; 94<small>cm</small></div><div class="n">Misurato all'ombelico. Sotto i 94 cm il rischio cardiovascolare torna normale.</div></div>
+    <div class="fig"><div class="k">Punto di partenza</div><div class="v">28,3<small>BMI</small></div><div class="n">Sovrappeso. La soglia dell'obesità è 30.</div></div>
+    <div class="fig"><div class="k">Quanto consumi</div><div class="v">2.450<small>kcal</small></div><div class="n">Al giorno, con il movimento previsto. A riposo il corpo ne brucia circa 1.720.</div></div>
+    <div class="fig"><div class="k">Quanto mangi</div><div class="v">1.680<small>kcal</small></div><div class="n">In media al giorno, fra 1.600 e 1.790. Un po' di più nei giorni di palestra. Gli sgarri sono conteggiati a parte.</div></div>
+    <div class="fig"><div class="k">Calo atteso</div><div class="v">0,5<small>kg/sett.</small></div><div class="n">Con gli sgarri nella media. Con tutti al massimo circa 0,35; senza il pasto libero circa 0,6. Le prime due settimane di più, perché scende anche l'acqua.</div></div>
+    <div class="fig"><div class="k">Primo traguardo</div><div class="v">78<small>kg</small></div><div class="n">Meno 8,7 kg, cioè il 10%. Ci arrivi tra la fine di gennaio e febbraio 2027.</div></div>
+    <div class="fig"><div class="k">Giro vita</div><div class="v">&lt; 94<small>cm</small></div><div class="n">All'altezza dell'ombelico. Sotto i 94 cm il rischio cardiovascolare torna normale.</div></div>
   </div>
 
-  <h3>Cosa c'è in una giornata normale</h3>
-  <div class="tscroll">
-  <table>
-    <thead><tr><th>Voce</th><th class="num">Obiettivo</th><th>Perché</th></tr></thead>
+  <h3>Cosa c'è in una giornata</h3>
+  <div class="tscroll"><table>
+    <thead><tr><th>Voce</th><th>Nel menù</th><th>Perché</th></tr></thead>
     <tbody>
-      <tr><th>Calorie</th><td class="num">1.700-1.800 kcal</td><td>Circa 800 in meno di quelle che consumi: si perde grasso senza fare la fame.</td></tr>
-      <tr><th>Proteine</th><td class="num">100-115 g</td><td>Tengono la sazietà e salvano i muscoli mentre dimagrisci. Con la palestra servono.</td></tr>
-      <tr><th>Fibre</th><td class="num">almeno 35 g</td><td>Crusca, orzo e legumi abbassano l'LDL. Tutte le fibre frenano l'arrivo dello zucchero nel sangue.</td></tr>
-      <tr><th>Sale</th><td class="num">meno di 5 g</td><td>Sono 2 g di sodio. Per la pressione, dopo il calo di peso, è la leva più forte.</td></tr>
-      <tr><th>Olio d'oliva</th><td class="num">25 g</td><td>Due cucchiai e mezzo. È l'unico condimento, ed è il grasso che fa bene al colesterolo.</td></tr>
-      <tr><th>Grassi saturi</th><td class="num">meno di 15 g</td><td>Stanno in burro, salumi, formaggi e dolci: sono loro che alzano l'LDL.</td></tr>
+      <tr><th>Calorie</th><td class="num">1.600-1.790 kcal</td><td>Circa 770 in meno di quelle che consumi: si perde grasso senza fare la fame.</td></tr>
+      <tr><th>Proteine</th><td class="num">84-130 g</td><td>Tengono la sazietà e salvano i muscoli mentre dimagrisci. Con la palestra servono.</td></tr>
+      <tr><th>Fibre</th><td class="num">33-48 g</td><td>Legumi, avena, verdure e pasta integrale: abbassano il colesterolo LDL e frenano l'arrivo dello zucchero nel sangue.</td></tr>
+      <tr><th>Sale</th><td class="num">sotto i 3 g</td><td>Il limite è 5 g. Nei piatti ce n'è poco perché la passata e i grissini sono senza sale e i legumi si sciacquano.</td></tr>
+      <tr><th>Olio d'oliva</th><td class="num">15-20 g</td><td>Un cucchiaio e mezzo, due. Più le noci e le mandorle: sono i grassi che fanno bene al colesterolo.</td></tr>
       <tr><th>Zuccheri aggiunti</th><td class="num">quasi zero</td><td>Lo zucchero della frutta intera va bene. Quello aggiunto resta per gli sgarri.</td></tr>
     </tbody>
-  </table>
-  </div>
+  </table></div>
   <p class="tnote">Per la pressione conta sapere che ogni chilo perso vale in media 1 mmHg in meno, e che la dieta DASH, a cui questa si ispira, abbassa la massima di 5-11 mmHg.</p>
 </section>
 
@@ -266,200 +273,110 @@
   <h2>Le regole della casa</h2>
   <p class="intro">Poche e fisse. Se tieni queste, anche un pasto improvvisato va bene.</p>
   <div class="rules">
-    <div class="rule salt"><div class="t">In cucina non si sala</div><p>Pasta, verdure e carne si cuociono senza sale. Il sapore lo danno limone, aglio, pepe, erbe, spezie e aceto. Il palato si abitua in due o tre settimane, dopo il cibo del bar ti sembrerà salatissimo.</p></div>
-    <div class="rule salt"><div class="t">Il sale nascosto</div><p>Tre quarti del sale arrivano da pane, salumi, formaggi stagionati, dado, salse e piatti pronti. I salumi escono dal menù. Il pane lo compri sciocco o a basso contenuto di sale: in Toscana è la norma, in Piemonte si chiede al fornaio.</p></div>
-    <div class="rule"><div class="t">L'olio si misura</div><p>Un cucchiaio da tavola sono 10 g, cioè 90 kcal. «A filo» dalla bottiglia diventano facilmente 30 g e 270 kcal. Sempre col cucchiaio: è il trucco più importante di tutta la dieta.</p></div>
-    <div class="rule"><div class="t">Prima la verdura</div><p>A pranzo e a cena comincia dalla verdura, poi le proteine, per ultimi pasta o pane. Così la glicemia dopo il pasto sale meno. La verdura è libera: se hai fame, doppia porzione.</p></div>
-    <div class="rule"><div class="t">Carboidrati integrali e mai da soli</div><p>Pasta integrale al dente, orzo, riso basmati, pane integrale. Sempre con legumi, pesce, uova o carne, mai un piatto di sola pasta.</p></div>
-    <div class="rule"><div class="t">Chi va nel piatto</div><p>A settimana: legumi 4 volte, pesce 4, carne bianca 3, uova 3. Carne rossa e salumi restano fuori, tranne nel pasto libero.</p></div>
-    <div class="rule"><div class="t">Lo spuntino non si salta</div><p>Pranzi alle 14: senza lo spuntino delle 10:30 arrivi a tavola affamato e mangi il doppio. Frutto e mandorle, sempre nella borsa.</p></div>
-    <div class="rule"><div class="t">Da bere</div><p>Acqua, un litro e mezzo o due al giorno. Caffè e tè senza zucchero vanno bene, anche due o tre caffè. Il vino al massimo due calici a settimana a cena, oltre agli sgarri: l'alcol alza pressione e trigliceridi.</p></div>
-    <div class="rule"><div class="t">Le prime due settimane si pesa tutto</div><p>Con la bilancia da cucina, pasta, pane e olio. Poi l'occhio impara e basta un controllo ogni tanto.</p></div>
+    <div class="rule salt"><div class="t">In cucina non si sala</div><p>Pasta, verdure, carne e pesce si cuociono senza sale. Il sapore lo danno limone, aglio, pepe, peperoncino, paprika, origano, rosmarino, basilico e i semi di finocchio. Il palato si abitua in due o tre settimane.</p></div>
+    <div class="rule salt"><div class="t">La passata senza sale</div><p>La Pomì il sale ce l'ha: 0,55 g ogni 100 g. Prendi la <b>Selex Passata Casereccia da 700 g</b> (0,99 €), quella che fra gli ingredienti ha solo «pomodori». Attento: la Casereccia da 690 g ha il sale. Si legge sempre l'etichetta.</p></div>
+    <div class="rule salt"><div class="t">Il sale nascosto</div><p>Tre quarti del sale arrivano da pane, salumi, formaggi, dado e piatti pronti. Qui il pane sono i grissini Panealba senza sale, i legumi in scatola si sciacquano sempre (perdono il 40% del sale) e lo sgombro si passa sotto l'acqua.</p></div>
+    <div class="rule"><div class="t">Si pesa tutto, anche l'acqua</div><p>Pentola sulla bilancia, premi il tasto che azzera, versi fino al numero. Un grammo d'acqua è un millilitro: niente bicchieri, niente dosatori.</p></div>
+    <div class="rule"><div class="t">L'olio si misura</div><p>Un cucchiaio da tavola sono 10 g, cioè 90 kcal; un cucchiaino 5 g. «A filo» dalla bottiglia diventano facilmente 30 g. Sempre col cucchiaio.</p></div>
+    <div class="rule"><div class="t">A pranzo non si cucina</div><p>Dal lunedì al venerdì arrivi alle 14:10 e alle 14:20 sei a tavola: si scalda la porzione avanzata dalla cena, o si monta un piatto in cinque minuti.</p></div>
+    <div class="rule"><div class="t">La sera si cucina per due</div><p>Metà la mangi, metà va in un contenitore chiuso e in frigo entro un'ora. Il giorno dopo si scalda finché fuma in ogni punto, oppure si mangia fredda.</p></div>
+    <div class="rule"><div class="t">Niente carne nel freezer</div><p>Pollo e fesa di tacchino a fettine, freschi: una confezione fa due pasti di fila, la cena e il pranzo dopo. Il pesce surgelato non si scongela: va in padella così com'è.</p></div>
+    <div class="rule"><div class="t">Prima la verdura</div><p>Quando c'è l'insalata o la verdura, comincia da quella, poi le proteine, per ultimi pasta, patate o grissini. La glicemia dopo il pasto sale meno.</p></div>
+    <div class="rule"><div class="t">Lo spuntino non si salta</div><p>Pranzi alle 14: senza lo spuntino arrivi a tavola affamato. A scuola la frutta non la porti, quindi 16 mandorle in borsa; la frutta la mangi a casa, a merenda.</p></div>
+    <div class="rule"><div class="t">Da bere</div><p>Acqua, un litro e mezzo o due al giorno. Caffè senza zucchero, anche al bar col dolcificante in bustina. Il vino al massimo due calici a settimana a cena, oltre agli sgarri.</p></div>
   </div>
 </section>
 
 <section id="colazione">
-  <h2>La colazione: la tua, con un ritocco</h2>
-  <p class="intro">È già una colazione giusta per il colesterolo e la glicemia. L'unico cambiamento è la crusca: da 15 a 30 g, così arrivi alla dose di beta-glucani che abbassa l'LDL, circa 3 g al giorno. Aumentala in una o due settimane e bevi un bicchiere d'acqua in più.</p>
+  <h2>La colazione: la tua</h2>
+  <p class="intro">Sei giorni su sette. La settima mattina, quella che vuoi, cappuccino e brioche al bar.</p>
   <div class="two">
     <div class="box">
       <div class="bt">Colazione di tutti i giorni</div>
       <ul class="ingr">
-        <li><span>Yogurt greco bianco 0%</span><span class="q">170 g</span></li>
-        <li><span>Crusca d'avena (3 cucchiai rasi)</span><span class="q">30 g</span></li>
-        <li><span>Frutti di bosco surgelati</span><span class="q">100 g</span></li>
-        <li><span>Noci sbriciolate</span><span class="q">2 gherigli</span></li>
-        <li><span>Cannella</span><span class="q">un pizzico</span></li>
-        <li><span>Stevia o dolcificante liquido</span><span class="q">a piacere</span></li>
-        <li><span>Caffè o tè, senza zucchero</span><span class="q">1 tazza</span></li>
+        <li>Frutti rossi surgelati misti <span class="q">100 g</span></li>
+        <li>Dolcificante e cannella <span class="q">un pizzico</span></li>
+        <li>Noci sbriciolate con le mani <span class="q">2 gherigli, 10 g</span></li>
+        <li>Fiocchi d'avena integrali <span class="q">30 g</span></li>
+        <li>Yogurt greco 0% Selex <span class="q">150 g, un terzo del vasetto</span></li>
       </ul>
-      <div class="tot">circa 300 kcal &middot; 23 g proteine &middot; 10 g fibre</div>
+      <p class="tot">circa 300 kcal &middot; 20 g proteine &middot; 7,6 g fibre</p>
     </div>
-    <div class="box">
-      <div class="bt">Se ti stufi: porridge al microonde</div>
-      <ul class="ingr">
-        <li><span>Fiocchi d'avena</span><span class="q">40 g</span></li>
-        <li><span>Latte parzialmente scremato</span><span class="q">200 ml</span></li>
-        <li><span>Frutti di bosco surgelati</span><span class="q">80 g</span></li>
-        <li><span>Noci</span><span class="q">2 gherigli</span></li>
-        <li><span>Cannella e dolcificante</span><span class="q">a piacere</span></li>
+    <div class="box olive">
+      <div class="bt">Due cose da sapere</div>
+      <ul>
+        <li>La «manciata» di frutti rossi pesala una volta: se sono circa 100 g, poi vai a occhio.</li>
+        <li>Con 30 g di fiocchi prendi circa 1,1 g di beta-glucani, le fibre dell'avena che abbassano il colesterolo; l'effetto pieno è a 3 g al giorno. Va bene così: sul colesterolo contano di più il calo di peso, i legumi, le noci e le mandorle.</li>
+        <li>La cannella va in un pizzico, non a cucchiaini: quella comune, in dosi alte tutti i giorni, non fa bene al fegato.</li>
       </ul>
-      <p style="font-size:15px;color:var(--ink-2)">In una tazza grande: avena e latte, 2 minuti al microonde a 600 W, mescoli a metà. Poi frutti di bosco e noci. Anche l'avena ha i beta-glucani.</p>
-      <div class="tot">circa 330 kcal &middot; 14 g proteine &middot; 6 g fibre</div>
     </div>
-  </div>
-  <div class="box olive" style="margin-top:14px">
-    <div class="bt">Tre attenzioni</div>
-    <ul>
-      <li>Lo yogurt deve essere <b>bianco naturale</b>, 0% o 2%. Quelli «al miele» o alla frutta hanno 10-15 g di zucchero a vasetto.</li>
-      <li><b>La cannella va in un pizzico, non a cucchiaini.</b> Quella comune, la cassia, contiene cumarina, che in dosi alte tutti i giorni non fa bene al fegato.</li>
-      <li><b>Stevia e dolcificante liquido non alzano la glicemia.</b> Usane il meno possibile, così il palato si disabitua al molto dolce.</li>
-    </ul>
   </div>
 </section>
 
 <section id="settimana">
   <h2>La settimana</h2>
-  <p class="intro">Gli sgarri sono messi dove cadono più spesso: pasta e cappuccio il mercoledì e il sabato, l'aperitivo il venerdì, il pasto libero il sabato sera. I giorni li scegli tu: se sposti uno sgarro, sposti solo quello e il resto del menù non cambia (le regole sono più sotto). I pesi sono a crudo, tranne dove c'è scritto «cotto» o «sgocciolato».</p>
+  <p class="intro">Il programma è senza sgarri: quelli li metti tu dove vuoi, e le regole sono più sotto. Ogni piatto è un collegamento alla sua ricetta, passo per passo. I pesi sono a crudo, tranne dove c'è scritto altro.</p>
+  <div class="tscroll"><table class="glance"><thead><tr><th></th><th>Lun</th><th>Mar</th><th>Mer</th><th>Gio</th><th>Ven</th><th>Sab</th><th>Dom</th></tr></thead><tbody><tr><th>Pranzo</th><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/fagioli-al-pomodoro.html" target="_blank" rel="noopener">Fagioli al pomodoro e rosmarino</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pollo-al-limone.html#domani" target="_blank" rel="noopener">Insalata di pollo con l'avocado</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/merluzzo-pizzaiola.html#domani" target="_blank" rel="noopener">La pizzaiola di ieri, e prima l'avocado</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/zuppa-di-lenticchie.html#domani" target="_blank" rel="noopener">Zuppa di lenticchie</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/tacchino-paprika-spinaci.html#domani" target="_blank" rel="noopener">Fesa di tacchino e spinaci di ieri</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pasta-ragu-lenticchie-rosse.html" target="_blank" rel="noopener">Pasta al ragù di lenticchie rosse</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pasta-e-ceci.html" target="_blank" rel="noopener">Pasta e ceci cremosa</a></td></tr><tr><th>Cena</th><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pollo-al-limone.html" target="_blank" rel="noopener">Pollo al limone e rosmarino con i broccoli</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/merluzzo-pizzaiola.html" target="_blank" rel="noopener">Cuori di merluzzo alla pizzaiola con le patate</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/zuppa-di-lenticchie.html" target="_blank" rel="noopener">Zuppa di lenticchie con la pasta</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/tacchino-paprika-spinaci.html" target="_blank" rel="noopener">Fesa di tacchino al limone e paprika con gli spinaci</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/sgombro-patate-finocchietto.html" target="_blank" rel="noopener">Sgombro con le patate al finocchietto e i broccoli</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/uova-e-piselli.html" target="_blank" rel="noopener">Uova e piselli al pomodoro</a></td><td><a href="https://maurobecattini77-hue.github.io/dieta/ricette/frittata-di-zucchine.html" target="_blank" rel="noopener">Frittata di zucchine</a></td></tr><tr class="act"><th>Movimento</th><td>Palestra</td><td>Camminata</td><td>Palestra</td><td>Camminata</td><td>Palestra</td><td>Se ti va</td><td>Riposo</td></tr></tbody></table></div>
+  <p class="tnote">A settimana: legumi 5 volte, carne bianca 4, pesce 3, uova 2. Ogni giorno un frutto a merenda, più i frutti rossi della colazione.</p>
+  <div class="days" style="margin-top:28px"><article class="day"><header><span class="dn">Lunedì</span><span class="tag gym">Palestra</span><span class="kc">circa 1.660 kcal &middot; 110 g di proteine</span></header><div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>La tua colazione</b><div class="d">Yogurt 150 g, fiocchi d'avena 30 g, frutti rossi, 2 noci. I dettagli sono più su.</div></div></div><div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>16 mandorle</b><div class="d">20 g, dalla borsa. Se vuoi, al bar un caffè col dolcificante.</div></div></div><div class="meal"><div class="w">Pranzo<span>14:15</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/fagioli-al-pomodoro.html" target="_blank" rel="noopener">Fagioli al pomodoro e rosmarino</a></b> <span class="tag leg">legumi</span><div class="d">Fatti domenica: 4 minuti al microonde. Cannellini 240 g (una scatola), passata 150 g, olio 10 g. Con insalata 100 g e grissini 35 g.</div></div></div><div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt e banana</b><div class="d">Yogurt 150 g e una banana, un'ora prima della palestra.</div></div></div><div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pollo-al-limone.html" target="_blank" rel="noopener">Pollo al limone e rosmarino con i broccoli</a></b> <span class="tag meat">carne bianca</span><div class="d">Cucini per due. Stasera pollo 150 g, broccoli 250 g, olio 10 g e grissini 50 g; il resto è il pranzo di domani.</div></div></div></article><article class="day"><header><span class="dn">Martedì</span><span class="tag walk">Camminata</span><span class="kc">circa 1.665 kcal &middot; 130 g di proteine</span></header><div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>La tua colazione</b><div class="d">Yogurt 150 g, fiocchi d'avena 30 g, frutti rossi, 2 noci. I dettagli sono più su.</div></div></div><div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>16 mandorle</b><div class="d">20 g, dalla borsa. Se vuoi, al bar un caffè col dolcificante.</div></div></div><div class="meal"><div class="w">Pranzo<span>14:15</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pollo-al-limone.html#domani" target="_blank" rel="noopener">Insalata di pollo con l'avocado</a></b> <span class="tag meat">carne bianca</span><div class="d">Il pollo di ieri, freddo a striscioline, con broccoli 200 g, pomodorini 150 g, mezzo avocado e limone. Niente olio. Grissini 35 g.</div></div></div><div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt e un frutto</b><div class="d">Yogurt 150 g e una mela, una pera o due kiwi.</div></div></div><div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/merluzzo-pizzaiola.html" target="_blank" rel="noopener">Cuori di merluzzo alla pizzaiola con le patate</a></b> <span class="tag fish">pesce</span><div class="d">Cucini per due: 200 g di merluzzo e 300 g di patate a porzione, passata, origano, olio 10 g. Metà è il pranzo di domani.</div></div></div></article><article class="day"><header><span class="dn">Mercoledì</span><span class="tag gym">Palestra</span><span class="kc">circa 1.790 kcal &middot; 111 g di proteine</span></header><div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>La tua colazione</b><div class="d">Yogurt 150 g, fiocchi d'avena 30 g, frutti rossi, 2 noci. I dettagli sono più su.</div></div></div><div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>16 mandorle</b><div class="d">20 g, dalla borsa. Se vuoi, al bar un caffè col dolcificante.</div></div></div><div class="meal"><div class="w">Pranzo<span>14:15</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/merluzzo-pizzaiola.html#domani" target="_blank" rel="noopener">La pizzaiola di ieri, e prima l'avocado</a></b> <span class="tag fish">pesce</span><div class="d">4 minuti al microonde. Prima l'altra metà dell'avocado a cucchiaiate, con 1 cucchiaino di aceto balsamico. Insalata 100 g.</div></div></div><div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt e banana</b><div class="d">Yogurt 150 g e una banana, un'ora prima della palestra.</div></div></div><div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/zuppa-di-lenticchie.html" target="_blank" rel="noopener">Zuppa di lenticchie con la pasta</a></b> <span class="tag leg">legumi</span><div class="d">Cucini per due: una scatola di lenticchie a porzione. Stasera con pasta integrale 50 g e parmigiano 5 g.</div></div></div></article><article class="day"><header><span class="dn">Giovedì</span><span class="tag walk">Camminata</span><span class="kc">circa 1.655 kcal &middot; 113 g di proteine</span></header><div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>La tua colazione</b><div class="d">Yogurt 150 g, fiocchi d'avena 30 g, frutti rossi, 2 noci. I dettagli sono più su.</div></div></div><div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>16 mandorle</b><div class="d">20 g, dalla borsa. Se vuoi, al bar un caffè col dolcificante.</div></div></div><div class="meal"><div class="w">Pranzo<span>14:15</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/zuppa-di-lenticchie.html#domani" target="_blank" rel="noopener">Zuppa di lenticchie</a></b> <span class="tag leg">legumi</span><div class="d">Quella di ieri, 4 minuti al microonde. Olio 5 g, parmigiano 5 g, grissini 50 g.</div></div></div><div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt e un frutto</b><div class="d">Yogurt 150 g e una mela, una pera o due kiwi.</div></div></div><div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/tacchino-paprika-spinaci.html" target="_blank" rel="noopener">Fesa di tacchino al limone e paprika con gli spinaci</a></b> <span class="tag meat">carne bianca</span><div class="d">Cucini per due. Stasera fesa 150 g, spinaci 300 g, olio 10 g, grissini 35 g.</div></div></div></article><article class="day"><header><span class="dn">Venerdì</span><span class="tag gym">Palestra</span><span class="kc">circa 1.675 kcal &middot; 125 g di proteine</span></header><div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>La tua colazione</b><div class="d">Yogurt 150 g, fiocchi d'avena 30 g, frutti rossi, 2 noci. I dettagli sono più su.</div></div></div><div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>16 mandorle</b><div class="d">20 g, dalla borsa. Se vuoi, al bar un caffè col dolcificante.</div></div></div><div class="meal"><div class="w">Pranzo<span>14:15</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/tacchino-paprika-spinaci.html#domani" target="_blank" rel="noopener">Fesa di tacchino e spinaci di ieri</a></b> <span class="tag meat">carne bianca</span><div class="d">2 minuti al microonde, olio 5 g, limone, grissini 35 g.</div></div></div><div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt e banana</b><div class="d">Yogurt 150 g e una banana, un'ora prima della palestra.</div></div></div><div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/sgombro-patate-finocchietto.html" target="_blank" rel="noopener">Sgombro con le patate al finocchietto e i broccoli</a></b> <span class="tag fish">pesce</span><div class="d">Sgombro 110 g, patate 250 g dorate in padella coi semi di finocchio, broccoli 200 g.</div></div></div></article><article class="day"><header><span class="dn">Sabato</span><span class="tag rest">Se ti va</span><span class="kc">circa 1.740 kcal &middot; 93 g di proteine</span></header><div class="meal"><div class="w">Colazione<span>8:30</span></div><div class="what"><b>La tua colazione</b><div class="d">Yogurt 150 g, fiocchi d'avena 30 g, frutti rossi, 2 noci. I dettagli sono più su.</div></div></div><div class="meal"><div class="w">Metà mattina<span>11:00</span></div><div class="what"><b>16 mandorle</b><div class="d">20 g, dalla borsa.</div></div></div><div class="meal"><div class="w">Pranzo<span>13:15</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pasta-ragu-lenticchie-rosse.html" target="_blank" rel="noopener">Pasta al ragù di lenticchie rosse</a></b> <span class="tag leg">legumi</span><div class="d">Pasta integrale 70 g, lenticchie rosse 50 g, parmigiano 5 g. Prima l'insalata 100 g.</div></div></div><div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt e un frutto</b><div class="d">Yogurt 150 g e una mela, una pera o due kiwi.</div></div></div><div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/uova-e-piselli.html" target="_blank" rel="noopener">Uova e piselli al pomodoro</a></b> <span class="tag egg">uova</span><div class="d">Due uova cotte nel sugo coi piselli 150 g. Grissini 35 g.</div></div></div></article><article class="day"><header><span class="dn">Domenica</span><span class="tag rest">Riposo</span><span class="kc">circa 1.600 kcal &middot; 84 g di proteine</span></header><div class="meal"><div class="w">Colazione<span>8:30</span></div><div class="what"><b>La tua colazione</b><div class="d">Yogurt 150 g, fiocchi d'avena 30 g, frutti rossi, 2 noci. I dettagli sono più su.</div></div></div><div class="meal"><div class="w">Metà mattina<span>11:00</span></div><div class="what"><b>16 mandorle</b><div class="d">20 g, dalla borsa.</div></div></div><div class="meal"><div class="w">Pranzo<span>13:15</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/pasta-e-ceci.html" target="_blank" rel="noopener">Pasta e ceci cremosa</a></b> <span class="tag leg">legumi</span><div class="d">Una scatola di ceci, metà schiacciati, pasta integrale 50 g. Nel pomeriggio i fagioli per lunedì.</div></div></div><div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt e un frutto</b><div class="d">Yogurt 150 g e una mela, una pera o due kiwi.</div></div></div><div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/frittata-di-zucchine.html" target="_blank" rel="noopener">Frittata di zucchine</a></b> <span class="tag egg">uova</span><div class="d">Due uova, zucchine 250 g, parmigiano 5 g. Insalata 100 g e grissini 35 g.</div></div></div></article></div>
+</section>
 
-  <div class="tscroll">
-  <table class="glance">
-    <thead><tr><th></th><th>Lun</th><th>Mar</th><th>Mer</th><th>Gio</th><th>Ven</th><th>Sab</th><th>Dom</th></tr></thead>
-    <tbody>
-      <tr><th>Colazione</th><td>Yogurt e crusca</td><td>Yogurt e crusca</td><td class="x">Pasta e cappuccio</td><td>Yogurt e crusca</td><td>Yogurt e crusca</td><td class="x">Pasta e cappuccio</td><td>Yogurt e crusca</td></tr>
-      <tr><th>Pranzo</th><td>Pasta e ceci</td><td>Orzo, tonno e ceci</td><td>Zuppa di lenticchie</td><td>Orzo, cannellini e verdure</td><td>Riso, pollo al curry e piselli</td><td>Insalatona di sgombro e patate</td><td>Pasta al ragù di lenticchie rosse</td></tr>
-      <tr><th>Cena</th><td>Pollo al limone e verdure</td><td>Tacchino alla salvia e spinaci</td><td>Merluzzo alla pizzaiola e patate</td><td>Salmone e broccoli</td><td class="x">Aperitivo, poi minestrone</td><td class="x">Pasto libero</td><td>Frittata di zucchine</td></tr>
-      <tr class="act"><th>Movimento</th><td>Palestra</td><td>Camminata</td><td>Palestra</td><td>Camminata</td><td>Palestra</td><td>Se ti va</td><td>Riposo</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p class="tnote">In marrone gli sgarri. Negli spuntini ogni giorno c'è un frutto con 15 g di mandorle a metà mattina e uno yogurt greco con un frutto nel pomeriggio.</p>
-
-  <div class="days" style="margin-top:26px">
-
-    <article class="day">
-      <header><span class="dn">Lunedì</span><span class="tag gym">Palestra</span><span class="kc">circa 1.700 kcal</span></header>
-      <div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>Yogurt greco, crusca, frutti di bosco e noci</b><div class="d">La colazione di tutti i giorni, sopra.</div></div></div>
-      <div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>Una mela e le mandorle</b><div class="d">1 mela, mandorle <span class="q">15 g</span> (una dozzina).</div></div></div>
-      <div class="meal"><div class="w">Pranzo<span>14:00</span></div><div class="what"><b>Pasta e ceci</b> <span class="tag leg">legumi</span><div class="d">Pasta integrale <span class="q">60 g</span>, ceci in scatola sciacquati <span class="q">150 g</span>, passata <span class="q">100 g</span>, aglio e rosmarino, olio <span class="q">10 g</span>. Il resto dei ceci va in frigo per martedì. Prima un'insalata mista con <span class="q">5 g</span> di olio e aceto.</div></div></div>
-      <div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt greco e banana</b><div class="d">Yogurt greco 0% <span class="q">150 g</span> e 1 banana, circa un'ora prima della palestra.</div></div></div>
-      <div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b>Pollo al limone con le verdure della domenica</b> <span class="tag meat">carne bianca</span><div class="d">Petto di pollo <span class="q">150 g</span>, verdure in padella della domenica <span class="q">250 g</span>, pane integrale <span class="q">60 g</span>, olio <span class="q">10 g</span>.</div></div></div>
-    </article>
-
-    <article class="day">
-      <header><span class="dn">Martedì</span><span class="tag walk">Camminata</span><span class="kc">circa 1.650 kcal</span></header>
-      <div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>Yogurt greco, crusca, frutti di bosco e noci</b></div></div>
-      <div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>Una pera e le mandorle</b><div class="d">1 pera, mandorle <span class="q">15 g</span>.</div></div></div>
-      <div class="meal"><div class="w">Pranzo<span>14:00</span></div><div class="what"><b>Insalata di orzo, tonno e ceci</b> <span class="tag fish">pesce</span><div class="d">Orzo cotto domenica (<span class="q">80 g</span> a crudo), 1 scatoletta di tonno al naturale (<span class="q">80 g</span> sgocciolato), i ceci avanzati da lunedì, pomodorini <span class="q">150 g</span>, mezzo cetriolo, basilico, limone, olio <span class="q">10 g</span>. Cinque minuti, e si porta anche a scuola.</div></div></div>
-      <div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt greco e un frutto</b><div class="d">Yogurt greco 0% <span class="q">150 g</span> e 2 kiwi o 1 arancia.</div></div></div>
-      <div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b>Tacchino alla salvia con gli spinaci</b> <span class="tag meat">carne bianca</span><div class="d">Fesa di tacchino a fettine <span class="q">150 g</span>, spinaci surgelati <span class="q">300 g</span> al microonde con limone, pane integrale <span class="q">60 g</span>, olio <span class="q">10 g</span>.</div></div></div>
-    </article>
-
-    <article class="day">
-      <header><span class="dn">Mercoledì</span><span class="tag gym">Palestra</span><span class="tag capp">Pasta e cappuccio</span><span class="kc">circa 1.700 kcal</span></header>
-      <div class="meal x"><div class="w">Colazione<span>al bar</span></div><div class="what"><b>Cappuccino e brioche</b><div class="d">Sgarro numero uno della settimana. La brioche la scegli tu, vuota, alla crema o alla marmellata.</div></div></div>
-      <div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>Solo un frutto</b><div class="d">Oggi niente mandorle: le calorie le ha già messe la brioche.</div></div></div>
-      <div class="meal"><div class="w">Pranzo<span>14:00</span></div><div class="what"><b>Zuppa di lenticchie con i crostini</b> <span class="tag leg">legumi</span><div class="d">Lenticchie in scatola sciacquate <span class="q">200 g</span>, sugo della domenica <span class="q">100 g</span>, 1 carota, un pugno di soffritto surgelato, pane integrale tostato <span class="q">60 g</span>, olio <span class="q">10 g</span> a crudo.</div></div></div>
-      <div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt greco e banana</b><div class="d">Yogurt greco 0% <span class="q">150 g</span> e 1 banana prima della palestra.</div></div></div>
-      <div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b>Merluzzo alla pizzaiola con le patate</b> <span class="tag fish">pesce</span><div class="d">Filetti di merluzzo surgelati <span class="q">200 g</span>, sugo della domenica <span class="q">150 g</span>, origano, 1 cucchiaino di capperi sciacquati. Patate <span class="q">200 g</span> al microonde, insalata a volontà, olio <span class="q">10 g</span>.</div></div></div>
-    </article>
-
-    <article class="day">
-      <header><span class="dn">Giovedì</span><span class="tag walk">Camminata</span><span class="kc">circa 1.750 kcal</span></header>
-      <div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>Yogurt greco, crusca, frutti di bosco e noci</b></div></div>
-      <div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>Un'arancia e le mandorle</b><div class="d">1 arancia, mandorle <span class="q">15 g</span>.</div></div></div>
-      <div class="meal"><div class="w">Pranzo<span>14:00</span></div><div class="what"><b>Orzo con cannellini e verdure</b> <span class="tag leg">legumi</span><div class="d">Orzo cotto domenica (<span class="q">70 g</span> a crudo), cannellini in scatola sciacquati <span class="q">150 g</span> (il resto per sabato), verdure della domenica <span class="q">200 g</span>, 1 cucchiaino di parmigiano, olio <span class="q">10 g</span>. Freddo, oppure tre minuti in padella.</div></div></div>
-      <div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt greco e un frutto</b><div class="d">Yogurt greco 0% <span class="q">150 g</span> e 1 mela.</div></div></div>
-      <div class="meal"><div class="w">Cena<span>20:30</span></div><div class="what"><b>Salmone in padella con i broccoli</b> <span class="tag fish">pesce</span><div class="d">Trancio di salmone surgelato <span class="q">150 g</span>, broccoli o fagiolini surgelati <span class="q">300 g</span> al microonde, pane integrale <span class="q">50 g</span>, olio <span class="q">5 g</span> (il salmone è già grasso di suo, e di grassi buoni), limone.</div></div></div>
-    </article>
-
-<article class="day">
-      <header><span class="dn">Venerdì</span><span class="tag gym">Palestra</span><span class="tag capp">Aperitivo</span><span class="kc">circa 1.750 kcal, aperitivo escluso</span></header>
-      <div class="meal"><div class="w">Colazione<span>7:00</span></div><div class="what"><b>Yogurt greco, crusca, frutti di bosco e noci</b></div></div>
-      <div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>Una mela e le mandorle</b><div class="d">1 mela, mandorle <span class="q">15 g</span>.</div></div></div>
-      <div class="meal"><div class="w">Pranzo<span>14:00</span></div><div class="what"><b>Riso con pollo al curry e piselli</b> <span class="tag meat">carne bianca</span><div class="d">Riso basmati <span class="q">70 g</span>, petto di pollo a dadini <span class="q">120 g</span>, piselli surgelati <span class="q">100 g</span>, mezza cipolla, 1 cucchiaino di curry, olio <span class="q">10 g</span>. Una padella sola.</div></div></div>
-      <div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt greco e banana</b><div class="d">Yogurt greco 0% <span class="q">150 g</span> e 1 banana prima della palestra.</div></div></div>
-      <div class="meal x"><div class="w">Aperitivo<span>19:30</span></div><div class="what"><b>Aperitivo</b><div class="d">Un drink (spritz, un calice o una birra) e gli stuzzichini che ti vanno. Sgarro della settimana.</div></div></div>
-      <div class="meal"><div class="w">Cena<span>dopo</span></div><div class="what"><b>Minestrone con l'uovo</b> <span class="tag egg">uova</span><div class="d">Dopo l'aperitivo: minestrone surgelato <span class="q">400 g</span> con 1 uovo rotto dentro a fine cottura, olio <span class="q">5 g</span>, niente pane. <b>Se salti l'aperitivo:</b> stesso minestrone con 2 uova, pane integrale <span class="q">60 g</span> e olio <span class="q">10 g</span>.</div></div></div>
-    </article>
-
-    <article class="day">
-      <header><span class="dn">Sabato</span><span class="tag walk">Movimento se ti va</span><span class="tag capp">Pasta e cappuccio</span><span class="tag capp">Pasto libero</span><span class="kc">circa 1.150 kcal più la cena libera</span></header>
-      <div class="meal x"><div class="w">Colazione<span>al bar</span></div><div class="what"><b>Cappuccino e brioche</b><div class="d">Sgarro numero due della settimana.</div></div></div>
-      <div class="meal"><div class="w">Metà mattina<span>10:30</span></div><div class="what"><b>Solo un frutto</b></div></div>
-      <div class="meal"><div class="w">Pranzo<span>13:30</span></div><div class="what"><b>Insalatona di sgombro e patate</b> <span class="tag fish">pesce</span><div class="d">1 scatoletta di sgombro al naturale (circa <span class="q">110 g</span> sgocciolato), patate <span class="q">150 g</span> al microonde, fagiolini surgelati <span class="q">150 g</span>, i cannellini avanzati da giovedì, pomodori, aceto, olio <span class="q">5 g</span>.</div></div></div>
-      <div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt greco e un frutto</b><div class="d">Da non saltare: alla cena libera ci arrivi con un po' di fame, non affamato.</div></div></div>
-      <div class="meal x"><div class="w">Cena<span>fuori</span></div><div class="what"><b>Pasto libero</b><div class="d">Sushi all you can eat, pizza, ristorante: quello che vuoi, senza regole. Leggi sotto cosa fare il giorno dopo.</div></div></div>
-    </article>
-
-    <article class="day">
-      <header><span class="dn">Domenica</span><span class="tag rest">Riposo</span><span class="kc">circa 1.650 kcal</span></header>
-      <div class="meal"><div class="w">Colazione<span>8:30</span></div><div class="what"><b>Yogurt greco, crusca, frutti di bosco e noci</b><div class="d">Anche dopo il pasto libero. Soprattutto dopo il pasto libero.</div></div></div>
-      <div class="meal"><div class="w">Metà mattina<span>11:00</span></div><div class="what"><b>Un frutto e le mandorle</b></div></div>
-      <div class="meal"><div class="w">Pranzo<span>13:30</span></div><div class="what"><b>Pasta al ragù di lenticchie rosse</b> <span class="tag leg">legumi</span><div class="d">Pasta integrale <span class="q">70 g</span>, lenticchie rosse secche <span class="q">50 g</span> (cuociono in 15 minuti, senza ammollo), passata <span class="q">150 g</span>, mezza cipolla, 1 carota, olio <span class="q">10 g</span>, 1 cucchiaino di parmigiano. Prima un'insalata.</div></div></div>
-      <div class="meal"><div class="w">Pomeriggio</div><div class="what"><b>Un'ora in cucina per la settimana</b><div class="d">Orzo, verdure in padella e sugo. I passi sono più sotto.</div></div></div>
-      <div class="meal"><div class="w">Merenda<span>17:30</span></div><div class="what"><b>Yogurt greco e un frutto</b></div></div>
-      <div class="meal"><div class="w">Cena<span>20:00</span></div><div class="what"><b>Frittata di zucchine</b> <span class="tag egg">uova</span><div class="d">2 uova, zucchine <span class="q">200 g</span>, pepe e prezzemolo, olio <span class="q">5 g</span> nella padella antiaderente. Pomodori in insalata, pane integrale <span class="q">60 g</span>.</div></div></div>
-    </article>
-
-  </div>
+<section id="ricette">
+  <h2>Le ricette</h2>
+  <p class="intro">Stanno online, così le apri anche dal telefono in cucina: ogni ingrediente pesato, i passi con i tempi, cosa fare se qualcosa va storto e i conti della porzione.</p>
+  <div class="recipes"><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/fagioli-al-pomodoro.html" target="_blank" rel="noopener"><span class="rq">Domenica pomeriggio</span><span class="rn">Fagioli al pomodoro e rosmarino</span><span class="rt">20 minuti &middot; circa 530 kcal a porzione &middot; per il pranzo del lunedì</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/pollo-al-limone.html" target="_blank" rel="noopener"><span class="rq">Lunedì sera</span><span class="rn">Pollo al limone e rosmarino con i broccoli</span><span class="rt">15 minuti &middot; circa 510 kcal a porzione &middot; e il pranzo del martedì</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/merluzzo-pizzaiola.html" target="_blank" rel="noopener"><span class="rq">Martedì sera</span><span class="rn">Cuori di merluzzo alla pizzaiola con le patate</span><span class="rt">35 minuti &middot; circa 540 kcal a porzione &middot; e il pranzo del mercoledì</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/zuppa-di-lenticchie.html" target="_blank" rel="noopener"><span class="rq">Mercoledì sera</span><span class="rn">Zuppa di lenticchie</span><span class="rt">45 minuti &middot; circa 540 kcal a porzione &middot; e il pranzo del giovedì</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/tacchino-paprika-spinaci.html" target="_blank" rel="noopener"><span class="rq">Giovedì sera</span><span class="rn">Fesa di tacchino al limone e paprika con gli spinaci</span><span class="rt">15 minuti &middot; circa 490 kcal a porzione &middot; e il pranzo del venerdì</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/sgombro-patate-finocchietto.html" target="_blank" rel="noopener"><span class="rq">Venerdì sera</span><span class="rn">Sgombro con le patate al finocchietto e i broccoli</span><span class="rt">25 minuti &middot; circa 565 kcal a porzione</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/pasta-ragu-lenticchie-rosse.html" target="_blank" rel="noopener"><span class="rq">Sabato a pranzo</span><span class="rn">Pasta al ragù di lenticchie rosse</span><span class="rt">30 minuti &middot; circa 600 kcal a porzione</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/uova-e-piselli.html" target="_blank" rel="noopener"><span class="rq">Sabato sera</span><span class="rn">Uova e piselli al pomodoro</span><span class="rt">30 minuti &middot; circa 550 kcal a porzione</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/pasta-e-ceci.html" target="_blank" rel="noopener"><span class="rq">Domenica a pranzo</span><span class="rn">Pasta e ceci cremosa</span><span class="rt">40 minuti &middot; circa 555 kcal a porzione</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/frittata-di-zucchine.html" target="_blank" rel="noopener"><span class="rq">Domenica sera</span><span class="rn">Frittata di zucchine</span><span class="rt">25 minuti &middot; circa 460 kcal a porzione</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/pranzo-di-scorta.html" target="_blank" rel="noopener"><span class="rq">Quando serve</span><span class="rn">Il pranzo di scorta</span><span class="rt">10 minuti &middot; circa 490 kcal a porzione &middot; se manca l'avanzo</span></a><a class="rc" href="https://maurobecattini77-hue.github.io/dieta/ricette/dopo-aperitivo.html" target="_blank" rel="noopener"><span class="rq">Quando serve</span><span class="rn">La cena dopo l'aperitivo</span><span class="rt">10 minuti &middot; circa 235 kcal a porzione &middot; se l'aperitivo è solo un drink</span></a></div>
+  <p class="online">Tutte insieme: <a href="https://maurobecattini77-hue.github.io/dieta/ricette/" target="_blank" rel="noopener">maurobecattini77-hue.github.io/dieta/ricette</a></p>
 </section>
 
 <section id="sgarri">
   <h2>Gli sgarri</h2>
-  <p class="intro">Sono parte della dieta, non un cedimento. Il calcolo del calo di peso li conta già tutti, al massimo, ogni settimana. Quelli che salti sono chili in più che se ne vanno.</p>
-
-  <div class="tscroll">
-  <table>
+  <p class="intro">Sono parte della dieta, non un cedimento: il calo di mezzo chilo a settimana li conta già. Li metti tu, nel pasto che vuoi. Nessun piatto è indispensabile: conta la settimana, non il singolo pasto.</p>
+  <div class="tscroll"><table>
     <thead><tr><th>Sgarro</th><th>Quante volte</th><th class="num">Calorie</th><th class="num">In più sul menù</th><th>Unica regola</th></tr></thead>
     <tbody>
-      <tr><th>Pasta e cappuccio</th><td>al massimo 2 a settimana</td><td class="num">350-500</td><td class="num">+50 / +200</td><td>Prende il posto della colazione. Quella mattina a metà mattina solo un frutto.</td></tr>
-      <tr><th>Aperitivo</th><td>al massimo 1</td><td class="num">350-700</td><td class="num">+250 / +550</td><td>Un drink. Dopo, la cena leggera: minestrone e uovo, senza pane.</td></tr>
-      <tr><th>Pasto libero</th><td>al massimo 1, pranzo o cena</td><td class="num">1.200-2.500</td><td class="num">+700 / +2.000</td><td>Nessuna. È libero davvero.</td></tr>
-      <tr class="sum"><th>Settimana piena di sgarri</th><td></td><td></td><td class="num">+1.100 / +2.900</td><td>È già dentro il calo di 0,5 kg a settimana.</td></tr>
+      <tr><th>Cappuccino e brioche</th><td>1 a settimana</td><td class="num">350-500</td><td class="num">+50 / +200</td><td>Prende il posto della colazione, la mattina che vuoi.</td></tr>
+      <tr><th>Aperitivo</th><td>al massimo 1</td><td class="num">350-700</td><td class="num">+100 / +400</td><td>Se è un'apericena, quella è la cena. Se è un drink con gli stuzzichini, dopo <a href="https://maurobecattini77-hue.github.io/dieta/ricette/dopo-aperitivo.html" target="_blank" rel="noopener">la cena leggera</a>.</td></tr>
+      <tr><th>Pasto libero</th><td>al massimo 1</td><td class="num">1.200-2.500</td><td class="num">+700 / +2.000</td><td>Nessuna. È libero davvero, a pranzo o a cena.</td></tr>
+      <tr class="sum"><th>Settimana piena</th><td></td><td></td><td class="num">+850 / +2.600</td><td>È già dentro il calo di mezzo chilo a settimana.</td></tr>
     </tbody>
-  </table>
-  </div>
-
-  <div class="two" style="margin-top:22px">
+  </table></div>
+  <div class="two" style="margin-top:18px">
     <div class="box">
-      <div class="bt">Come si spostano</div>
+      <div class="bt">Come si incastrano</div>
       <ul>
-        <li><b>Pasta e cappuccio:</b> una mattina qualsiasi, al posto dello yogurt.</li>
-        <li><b>Aperitivo:</b> una sera qualsiasi. Quella sera la cena diventa il minestrone con l'uovo del venerdì. Se il minestrone non ce l'hai, bastano 300 g di verdura con un uovo o una scatoletta di tonno, senza pane.</li>
-        <li><b>Pasto libero:</b> un giorno qualsiasi, a pranzo o a cena. Salta solo il pasto che sostituisce, il resto della giornata resta come da menù.</li>
+        <li><b>Le sere più comode sono venerdì, sabato e domenica</b>: quelle cene non preparano il pranzo del giorno dopo. Lo stesso i pranzi del sabato e della domenica.</li>
+        <li><b>Se lo sgarro cade su una cena dal lunedì al giovedì</b>, il giorno dopo non hai l'avanzo: c'è <a href="https://maurobecattini77-hue.github.io/dieta/ricette/pranzo-di-scorta.html" target="_blank" rel="noopener">il pranzo di scorta</a>. Le fettine di quella sera le cuoci la sera dopo, se la scadenza lo permette.</li>
         <li><b>Non si accumulano.</b> Uno sgarro saltato non passa alla settimana dopo: è guadagnato e basta.</li>
       </ul>
     </div>
     <div class="box capp">
       <div class="bt">Il giorno dopo il pasto libero</div>
       <ul>
-        <li>Colazione normale, pasti normali. <b>Niente digiuno e niente «recupero»:</b> sono proprio le giornate di punizione che fanno saltare le diete.</li>
+        <li>Colazione normale, pasti normali. Niente digiuno e niente «recupero»: sono le giornate di punizione che fanno saltare le diete.</li>
         <li>Bevi più acqua del solito.</li>
       </ul>
     </div>
   </div>
-  <p class="tnote">Un'informazione, non una regola: un cucchiaio di salsa di soia contiene circa 2,3 g di sale, quasi metà di quello di un'intera giornata. La soia a ridotto contenuto di sale si trova in ogni supermercato.</p>
 </section>
 
 <section id="rientro">
   <h2>Il giorno del rientro</h2>
-  <p class="intro">Una volta a settimana pranzi a scuola. Quel giorno scambi il pranzo del menù con uno dei due che nascono già da portare via, perché li prepari la domenica.</p>
+  <p class="intro">Una volta a settimana pranzi a scuola, dove il microonde non c'è. Quel giorno ti porti un pranzo che si mangia freddo. Il giorno lo sistemiamo quando arriva l'orario definitivo.</p>
   <div class="two">
     <div class="box">
       <div class="bt">Cosa portare</div>
       <ul>
-        <li><b>Insalata di orzo, tonno e ceci</b> (quella del martedì), oppure <b>orzo con cannellini e verdure</b> (quella del giovedì). Si mangiano fredde.</li>
-        <li>Se a scuola c'è un microonde va bene anche il <b>riso con pollo al curry</b> del venerdì, fatto la sera prima.</li>
-        <li>Il frutto e le mandorle come sempre, più la merenda da mangiare prima di tornare a casa.</li>
+        <li>Il migliore è <a href="https://maurobecattini77-hue.github.io/dieta/ricette/pollo-al-limone.html#domani" target="_blank" rel="noopener">l'insalata di pollo con l'avocado</a> del martedì: nasce fredda.</li>
+        <li>Va bene anche <a href="https://maurobecattini77-hue.github.io/dieta/ricette/frittata-di-zucchine.html" target="_blank" rel="noopener">la frittata di zucchine</a>, che fredda è buonissima, con i pomodorini e i grissini.</li>
+        <li>Il frutto e le mandorle come sempre.</li>
       </ul>
     </div>
     <div class="box">
       <div class="bt">Cosa serve</div>
       <ul>
-        <li>Un contenitore ermetico da un litro circa, di vetro o di plastica per alimenti.</li>
-        <li>Una borsa termica con un siberino. Orzo e tonno fuori dal frigo per più di due ore non vanno bene, soprattutto a settembre e a giugno.</li>
-        <li>L'olio mettilo al mattino, non la sera prima: l'orzo lo assorbe tutto e diventa asciutto.</li>
+        <li>Un contenitore ermetico da un litro circa.</li>
+        <li>Una borsa termica con un siberino: pollo e uova fuori dal frigo per più di due ore non vanno bene.</li>
+        <li>L'avocado col limone sopra, se no annerisce. Il condimento lo metti al momento.</li>
       </ul>
     </div>
   </div>
@@ -467,154 +384,68 @@
 
 <section id="domenica">
   <h2>La domenica in cucina</h2>
-  <p class="intro">Un'ora, con due fuochi e il tagliere, dopo pranzo. Copre i pranzi da lunedì a giovedì e toglie di mezzo la parte noiosa della settimana.</p>
+  <p class="intro">Mezz'ora, dopo pranzo o nel pomeriggio. Prepara il lunedì e toglie di mezzo le cose noiose.</p>
   <ol class="steps">
-    <li><span class="when">0:00</span><span class="d"><b>Orzo.</b> 150 g di orzo perlato in acqua bollente senza sale, 35-40 minuti. Scolalo, fallo raffreddare e dividilo in due contenitori, poco più grande quello di martedì. In frigo tiene fino a giovedì.</span></li>
-    <li><span class="when">0:05</span><span class="d"><b>Verdure in padella.</b> 2 zucchine, 2 peperoni, 1 melanzana e 1 cipolla a tocchi. Padella larga, 1 cucchiaio d'olio, uno spicchio d'aglio, coperchio, fuoco medio per 25 minuti mescolando ogni tanto. Alla fine origano o basilico. Diventano circa 650 g: lunedì sera e giovedì a pranzo.</span></li>
-    <li><span class="when">0:10</span><span class="d"><b>Sugo.</b> 300 g di passata con aglio e basilico, 15 minuti a fuoco basso. Va in un barattolo per mercoledì: zuppa di lenticchie a pranzo e merluzzo alla pizzaiola a cena.</span></li>
-    <li><span class="when">0:30</span><span class="d"><b>Pollo.</b> Il petto di pollo si divide: 150 g in frigo per lunedì, 120 g in freezer per venerdì (lo sposti in frigo giovedì sera).</span></li>
-    <li><span class="when">0:35</span><span class="d"><b>Pane.</b> Affetta il filone e congela le fette. Una fetta è circa 30 g, quindi una porzione sono due fette. Si tostano direttamente da congelate.</span></li>
-    <li><span class="when">0:40</span><span class="d"><b>Mandorle.</b> Dividi 75 g di mandorle in cinque sacchetti da 15 g, uno per giorno di scuola. Così in borsa non finisce il pacchetto intero.</span></li>
-    <li><span class="when">0:45</span><span class="d"><b>Insalata.</b> Lavala e asciugala per due o tre giorni, oppure compra quella già lavata in busta: costa di più, ma è un lavoro in meno.</span></li>
-    <li><span class="when">1:00</span><span class="d"><b>In frigo, ogni contenitore col giorno scritto sopra.</b> Un pennarello sul coperchio basta.</span></li>
+    <li><span class="when">20 minuti</span><span class="d"><b><a href="https://maurobecattini77-hue.github.io/dieta/ricette/fagioli-al-pomodoro.html" target="_blank" rel="noopener">I fagioli al pomodoro e rosmarino</a></b> per il pranzo del lunedì. In frigo nel contenitore chiuso.</span></li>
+    <li><span class="when">5 minuti</span><span class="d"><b>Le mandorle.</b> Cinque sacchettini da 20 g, cioè 16 mandorle l'uno, uno per ogni giorno di scuola. Così in borsa non finisce il pacchetto intero.</span></li>
+    <li><span class="when">2 minuti</span><span class="d"><b>La scorta.</b> Controlla che ci siano una scatoletta di sgombro e una busta di broccoli, per <a href="https://maurobecattini77-hue.github.io/dieta/ricette/pranzo-di-scorta.html" target="_blank" rel="noopener">il pranzo di scorta</a>.</span></li>
+    <li><span class="when">2 minuti</span><span class="d"><b>L'avocado.</b> Serve maturo per martedì: se è duro, lascialo fuori dal frigo; quando cede un po' sotto il pollice, va in frigo.</span></li>
   </ol>
-</section>
-
-<section id="ricette">
-  <h2>Le ricette</h2>
-  <p class="intro">Tutte con fornelli e microonde, visto che il forno è rotto. Una padella o una pentola per piatto, al massimo venti minuti. Il sale non c'è mai: il sapore lo danno aglio, limone, pepe, erbe e spezie.</p>
-  <div class="recipes">
-
-    <div class="rc"><div class="rh"><span class="rn">Pasta e ceci</span><span class="tm">20 min</span></div><div class="tools">Una pentola</div>
-      <ol><li>Aglio e rosmarino in un cucchiaino d'olio, un minuto.</li><li>Aggiungi i ceci sciacquati, la passata e 400 ml d'acqua. Cinque minuti, poi schiaccia metà dei ceci con la forchetta.</li><li>Butta la pasta direttamente lì dentro e aggiungi acqua calda man mano, come un risotto.</li><li>A fuoco spento l'olio che resta e il pepe.</li></ol>
-      <p class="tip">I ceci sciacquati sotto il rubinetto perdono circa il 40% del sale della scatola. Vale per tutti i legumi.</p></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Pollo al limone</span><span class="tm">10 min</span></div><div class="tools">Una padella</div>
-      <ol><li>Petto di pollo già a fettine sottili, oppure tagliato da te.</li><li>Padella antiaderente ben calda con un cucchiaino d'olio, tre minuti per lato.</li><li>Succo di mezzo limone e un goccio d'acqua, un minuto finché fa la cremina.</li><li>Pepe e prezzemolo.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Tacchino alla salvia</span><span class="tm">10 min</span></div><div class="tools">Padella e microonde</div>
-      <ol><li>Tre o quattro foglie di salvia nell'olio caldo, poi le fettine di tacchino, due o tre minuti per lato.</li><li>Sfuma con un goccio d'acqua o di vino bianco, che evapora.</li><li>Nel frattempo gli spinaci surgelati al microonde: contenitore col coperchio, 7-8 minuti a 800 W. Poi limone e pepe.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Zuppa di lenticchie</span><span class="tm">15 min</span></div><div class="tools">Una pentola</div>
-      <ol><li>Soffritto surgelato e carota a rondelle in un cucchiaino d'olio, tre minuti.</li><li>Lenticchie sciacquate, sugo della domenica e 300 ml d'acqua, dieci minuti.</li><li>Se la vuoi cremosa, frulla metà zuppa col minipimer.</li><li>Pane tostato a parte, olio a crudo, pepe.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Merluzzo alla pizzaiola</span><span class="tm">15 min</span></div><div class="tools">Padella e microonde</div>
-      <ol><li>Il sugo della domenica in padella. I filetti ci vanno ancora surgelati, niente scongelamento.</li><li>Coperchio, fuoco medio, 10-12 minuti.</li><li>Negli ultimi due minuti origano e capperi sciacquati.</li><li>Intanto le patate: a cubetti in un contenitore con due cucchiai d'acqua, coperchio, 6-8 minuti a 800 W.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Salmone in padella</span><span class="tm">12 min</span></div><div class="tools">Padella e microonde</div>
-      <ol><li>La sera prima sposta il trancio dal freezer al frigo.</li><li>Padella calda senza olio, lato della pelle in giù, cinque minuti. Giralo e altri tre.</li><li>I broccoli surgelati al microonde: tre cucchiai d'acqua, coperchio, 7-8 minuti.</li><li>Limone, pepe, e l'olio a crudo sulle verdure.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Riso, pollo al curry e piselli</span><span class="tm">20 min</span></div><div class="tools">Una padella col coperchio</div>
-      <ol><li>Mezza cipolla nell'olio, tre minuti. Poi il pollo a dadini, cinque minuti.</li><li>Il curry, i piselli surgelati, il riso crudo e 175 ml d'acqua calda.</li><li>Coperchio, fuoco basso, 12 minuti senza toccare. Il riso assorbe tutta l'acqua.</li></ol>
-      <p class="tip">È anche il pranzo da portare a scuola, se lì c'è un microonde.</p></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Ragù di lenticchie rosse</span><span class="tm">20 min</span></div><div class="tools">Due pentole</div>
-      <ol><li>Cipolla e carota tritate in un cucchiaino d'olio, tre minuti.</li><li>Lenticchie rosse sciacquate, passata e 200 ml d'acqua, 15 minuti. Si disfano da sole e diventano un ragù.</li><li>Intanto cuoci la pasta nell'acqua senza sale. Scola e condisci col ragù, il cucchiaino di parmigiano e l'olio a crudo.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Frittata di zucchine</span><span class="tm">15 min</span></div><div class="tools">Una padella col coperchio</div>
-      <ol><li>Zucchine a rondelle in padella con l'olio, cinque minuti.</li><li>Sbatti le uova con pepe e prezzemolo e versale sulle zucchine.</li><li>Coperchio, fuoco basso, 6-8 minuti. Non serve girarla: col coperchio si cuoce anche sopra.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Minestrone con l'uovo</span><span class="tm">15 min</span></div><div class="tools">Una pentola</div>
-      <ol><li>Minestrone surgelato con 200 ml d'acqua, 12 minuti. Niente dado.</li><li>Rompi l'uovo direttamente nel minestrone che bolle piano, coperchio, tre minuti.</li><li>Pepe e olio a crudo.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Insalata di orzo e tonno</span><span class="tm">5 min</span></div><div class="tools">Senza fuochi</div>
-      <ol><li>L'orzo della domenica in una ciotola.</li><li>Tonno sgocciolato, ceci avanzati, pomodorini tagliati, cetriolo a cubetti, basilico.</li><li>Limone, olio e pepe. Mescola e basta.</li></ol></div>
-
-    <div class="rc"><div class="rh"><span class="rn">Insalatona di sgombro</span><span class="tm">10 min</span></div><div class="tools">Microonde</div>
-      <ol><li>Patate a cubetti e fagiolini surgelati nello stesso contenitore con tre cucchiai d'acqua, coperchio, 8 minuti.</li><li>Falli intiepidire e aggiungi lo sgombro sgocciolato, i cannellini, i pomodori.</li><li>Aceto, olio, pepe, un po' di cipolla rossa se ti piace.</li></ol></div>
-
-  </div>
-
-  <div class="box olive" style="margin-top:18px">
-    <div class="bt">Quando arriva la friggitrice ad aria (o torna il forno)</div>
-    <p>Diventa tutto ancora più comodo, perché la metti su e ti dimentichi. Senza preriscaldare e con un cucchiaino d'olio al massimo:</p>
-    <ul>
-      <li><b>Pollo o tacchino</b> a fette: 180 °C, 12-14 minuti, girando a metà.</li>
-      <li><b>Salmone</b>: 180 °C, 10-12 minuti, lato della pelle in giù.</li>
-      <li><b>Merluzzo</b> surgelato con pangrattato e prezzemolo: 190 °C, 15 minuti.</li>
-      <li><b>Verdure a tocchi</b> (zucchine, peperoni, melanzane, cipolla): 190 °C, 15-18 minuti. Sostituiscono la padellata della domenica.</li>
-      <li><b>Patate a spicchi</b> con la buccia: 200 °C, 20 minuti. Tutto il gusto di quelle fritte con un decimo dell'olio.</li>
-      <li><b>Ceci sciacquati e asciugati</b> con paprika: 200 °C, 15 minuti. Diventano croccanti, sono lo stuzzichino per le sere senza aperitivo.</li>
-    </ul>
-  </div>
 </section>
 
 <section id="spesa">
   <h2>La spesa della settimana</h2>
-  <p class="intro">Le quantità sono per una settimana, per una persona. In grigio le scorte, che si comprano una volta ogni tanto. Si spendono circa 50-60 € a settimana, sgarri esclusi. La prima spesa, con olio, frutta secca, cereali e spezie, arriva a circa 90 €.</p>
+  <p class="intro">Al Mercatò Big di Mussotto. Le quantità sono per una settimana; in grigio le scorte, che si comprano quando finiscono. Prezzi letti sul sito del negozio il 26 settembre 2026. Si spendono circa 65-70 € a settimana, sgarri esclusi.</p>
   <div class="shop">
     <div class="aisle"><div class="an">Frigo</div><ul>
-      <li><span>Yogurt greco bianco 0%</span><span class="q">2 kg</span></li>
-      <li><span>Petto di pollo</span><span class="q">300 g</span></li>
-      <li><span>Fesa di tacchino a fettine</span><span class="q">150 g</span></li>
-      <li><span>Uova</span><span class="q">6</span></li>
-      <li class="st"><span>Parmigiano, un pezzo</span><span class="q">150 g</span></li>
+      <li>Yogurt greco 0% Selex, vasetto 450 g <span class="q">4-5, 2,25 € l'uno</span></li>
+      <li>Petto di pollo a fettine <span class="q">circa 300 g, per lunedì</span></li>
+      <li>Fesa di tacchino a fettine <span class="q">circa 300 g, per giovedì</span></li>
+      <li>Uova <span class="q">4</span></li>
+      <li class="st">Parmigiano grattugiato Selex 90 g <span class="q">1,95 €</span></li>
     </ul></div>
     <div class="aisle"><div class="an">Frutta</div><ul>
-      <li><span>Mele</span><span class="q">1 kg</span></li>
-      <li><span>Arance o pere</span><span class="q">1 kg</span></li>
-      <li><span>Banane</span><span class="q">3</span></li>
-      <li><span>Kiwi</span><span class="q">2</span></li>
-      <li><span>Limoni</span><span class="q">3</span></li>
+      <li>Banane <span class="q">3, per la palestra</span></li>
+      <li>Mele, pere o kiwi <span class="q">4 frutti</span></li>
+      <li>Limoni <span class="q">4</span></li>
+      <li>Avocado <span class="q">1</span></li>
     </ul></div>
     <div class="aisle"><div class="an">Verdura</div><ul>
-      <li><span>Zucchine</span><span class="q">1 kg</span></li>
-      <li><span>Peperoni</span><span class="q">2</span></li>
-      <li><span>Melanzana</span><span class="q">1</span></li>
-      <li><span>Pomodorini</span><span class="q">500 g</span></li>
-      <li><span>Pomodori da insalata</span><span class="q">3</span></li>
-      <li><span>Cetriolo</span><span class="q">1</span></li>
-      <li><span>Insalata</span><span class="q">2 cespi o buste</span></li>
-      <li><span>Carote</span><span class="q">500 g</span></li>
-      <li><span>Patate</span><span class="q">1 kg</span></li>
-      <li class="st"><span>Cipolle, aglio</span><span class="q">scorta</span></li>
-      <li class="st"><span>Basilico in vaso, prezzemolo</span><span class="q">scorta</span></li>
+      <li>Patate <span class="q">1 kg</span></li>
+      <li>Zucchine <span class="q">2 piccole</span></li>
+      <li>Pomodorini <span class="q">250 g</span></li>
+      <li>Cipolla <span class="q">1</span></li>
+      <li>Insalata Selex Tutteinsieme 200 g <span class="q">2 buste, 1,89 €</span></li>
+      <li class="st">Aglio, basilico e rosmarino in vaso <span class="q">scorta</span></li>
     </ul></div>
     <div class="aisle"><div class="an">Surgelati</div><ul>
-      <li><span>Frutti di bosco</span><span class="q">500 g</span></li>
-      <li><span>Spinaci</span><span class="q">450 g</span></li>
-      <li><span>Broccoli o fagiolini</span><span class="q">1 kg</span></li>
-      <li><span>Minestrone senza condimenti</span><span class="q">1 kg</span></li>
-      <li class="st"><span>Filetti di merluzzo</span><span class="q">400 g, per 2 sett.</span></li>
-      <li class="st"><span>Tranci di salmone</span><span class="q">2, per 2 sett.</span></li>
-      <li class="st"><span>Piselli</span><span class="q">450 g</span></li>
-      <li class="st"><span>Soffritto</span><span class="q">1 busta</span></li>
+      <li>Frutti rossi misti <span class="q">600 g</span></li>
+      <li>Broccoli Selex a rosette 450 g <span class="q">2 buste, 1,69 €</span></li>
+      <li>Spinaci Orogel Cubello 900 g <span class="q">1, dura 1 sett. e mezza</span></li>
+      <li>Cuori di merluzzo Selex 400 g <span class="q">1, 4,54 €</span></li>
+      <li>Misto per soffritto Selex 150 g <span class="q">1, 0,89 €</span></li>
+      <li class="st">Piselli finissimi Selex 450 g <span class="q">1,49 €, 3 sett.</span></li>
     </ul></div>
-    <div class="aisle"><div class="an">Scatolame</div><ul>
-      <li><span>Ceci</span><span class="q">1 scatola</span></li>
-      <li><span>Lenticchie</span><span class="q">1 scatola</span></li>
-      <li><span>Cannellini</span><span class="q">1 scatola</span></li>
-      <li><span>Tonno al naturale</span><span class="q">1 scatoletta</span></li>
-      <li><span>Sgombro al naturale</span><span class="q">1 scatoletta</span></li>
-      <li><span>Passata di pomodoro</span><span class="q">700 g</span></li>
-      <li class="st"><span>Capperi</span><span class="q">1 vasetto</span></li>
+    <div class="aisle"><div class="an">Scatole e barattoli</div><ul>
+      <li>Passata Selex Casereccia 700 g, senza sale <span class="q">2, 0,99 €</span></li>
+      <li>Lenticchie lessate Selex 400 g <span class="q">2, 0,64 €</span></li>
+      <li>Cannellini lessati Selex 400 g <span class="q">1, 0,69 €</span></li>
+      <li>Ceci lessati Selex 400 g <span class="q">1, 0,69 €</span></li>
+      <li>Sgombro al naturale Mareblu 110 g <span class="q">1 + 1 di scorta, 2,09 €</span></li>
+      <li class="st">Aceto balsamico di Modena IGP, il tuo Due Vittorie <span class="q">scorta</span></li>
     </ul></div>
-    <div class="aisle"><div class="an">Pane e cereali</div><ul>
-      <li><span>Pane integrale sciocco o a basso sale</span><span class="q">500 g</span></li>
-      <li class="st"><span>Crusca d'avena</span><span class="q">500 g, per 3 sett.</span></li>
-      <li class="st"><span>Pasta integrale</span><span class="q">500 g</span></li>
-      <li class="st"><span>Orzo perlato</span><span class="q">500 g</span></li>
-      <li class="st"><span>Riso basmati</span><span class="q">1 kg</span></li>
-      <li class="st"><span>Lenticchie rosse secche</span><span class="q">500 g</span></li>
-    </ul></div>
-    <div class="aisle"><div class="an">Dispensa</div><ul>
-      <li class="st"><span>Olio extravergine d'oliva</span><span class="q">1 l, per 5 sett.</span></li>
-      <li class="st"><span>Mandorle sgusciate</span><span class="q">200 g</span></li>
-      <li class="st"><span>Noci sgusciate</span><span class="q">100 g</span></li>
-      <li class="st"><span>Curry, origano, paprika, pepe, cannella</span><span class="q">scorta</span></li>
-      <li class="st"><span>Aceto, stevia o dolcificante</span><span class="q">scorta</span></li>
+    <div class="aisle"><div class="an">Pasta, grissini, dispensa</div><ul>
+      <li>Grissini Panealba senza sale 250 g <span class="q">2, 1,99 €</span></li>
+      <li>Mandorle pelate Selex 250 g <span class="q">1, dura quasi 2 sett.</span></li>
+      <li class="st">Fiocchi d'avena integrali 500 g <span class="q">scorta 2-3 sett.</span></li>
+      <li class="st">Noci sgusciate Life 200 g <span class="q">scorta 3 sett.</span></li>
+      <li class="st">Pasta integrale Selex Natura Chiama 500 g <span class="q">1,09 €, 3 sett.</span></li>
+      <li class="st">Lenticchie rosse secche Selex 400 g <span class="q">1,09 €, 8 sett.</span></li>
+      <li class="st">Olio extravergine 1 l <span class="q">5-6 sett.</span></li>
+      <li class="st">Paprika, origano, curry, semi di finocchio, pepe, peperoncino, cannella, dolcificante <span class="q">scorta</span></li>
     </ul></div>
   </div>
-  <div class="box" style="margin-top:4px">
-    <div class="bt">Per spendere meno senza perdere niente</div>
-    <ul>
-      <li>Yogurt greco nei secchielli da 1 kg: al chilo costa circa la metà dei vasetti.</li>
-      <li>Pesce e verdure surgelati hanno gli stessi nutrienti del fresco, costano meno e non si buttano.</li>
-      <li>Frutta di stagione: a settembre mele, pere, uva e fichi, poi arance e kiwi. Di uva ne basta un grappolo piccolo, circa 120 g, perché è la più zuccherina.</li>
-      <li>I legumi secchi costano un terzo di quelli in scatola e non hanno sale, ma vanno messi in ammollo e cotti a lungo. Se una domenica hai tempo, cuocine 500 g e congelali a porzioni.</li>
-      <li>Leggi l'etichetta del pane: sotto 1 g di sale ogni 100 g è a basso contenuto. Il pane comune ne ha 1,5-2 g.</li>
-    </ul>
-  </div>
+  <p class="tnote">Le fettine fresche durano pochi giorni: se fai la spesa nel fine settimana, guarda che la fesa arrivi almeno a giovedì, se no si compra a metà settimana.</p>
 </section>
 
 <section id="scambi">
@@ -622,34 +453,31 @@
   <p class="intro">Se un giorno non hai quell'ingrediente o non ti va, lo cambi con uno della stessa colonna. Le quantità della stessa colonna si equivalgono.</p>
   <div class="swap">
     <div class="box"><div class="bt">Una porzione di proteine</div><ul>
-      <li><span>Petto di pollo o tacchino</span><span class="q">150 g</span></li>
-      <li><span>Merluzzo, nasello, platessa</span><span class="q">200 g</span></li>
-      <li><span>Salmone, sgombro, sardine fresche</span><span class="q">150 g</span></li>
-      <li><span>Tonno o sgombro al naturale</span><span class="q">1 scatoletta</span></li>
-      <li><span>Uova</span><span class="q">2</span></li>
-      <li><span>Legumi in scatola, sgocciolati</span><span class="q">200 g</span></li>
-      <li><span>Legumi secchi</span><span class="q">70 g</span></li>
-      <li><span>Fiocchi di latte</span><span class="q">200 g</span></li>
+      <li>Petto di pollo o fesa di tacchino <span class="q">150 g</span></li>
+      <li>Cuori di merluzzo <span class="q">200 g</span></li>
+      <li>Sgombro al naturale <span class="q">1 scatoletta, 110 g</span></li>
+      <li>Uova <span class="q">2</span></li>
+      <li>Legumi in scatola, sgocciolati <span class="q">1 scatola, 240 g</span></li>
+      <li>Lenticchie rosse secche <span class="q">80 g</span></li>
     </ul></div>
-    <div class="box"><div class="bt">Una porzione di carboidrati</div><ul>
-      <li><span>Pasta integrale</span><span class="q">70 g</span></li>
-      <li><span>Riso basmati o integrale</span><span class="q">70 g</span></li>
-      <li><span>Orzo, farro</span><span class="q">70 g</span></li>
-      <li><span>Couscous integrale</span><span class="q">70 g</span></li>
-      <li><span>Pane integrale</span><span class="q">90 g</span></li>
-      <li><span>Patate</span><span class="q">300 g</span></li>
-      <li><span>Fiocchi d'avena</span><span class="q">60 g</span></li>
+    <div class="box"><div class="bt">Il pane del pasto</div><ul>
+      <li>Grissini senza sale <span class="q">35 g</span></li>
+      <li>Patate <span class="q">200 g</span></li>
+      <li>Pasta integrale o riso basmati <span class="q">40 g</span></li>
+    </ul><div class="bt" style="margin-top:14px">Un piatto di pasta</div><ul>
+      <li>Pasta integrale <span class="q">70 g</span></li>
+      <li>Riso basmati <span class="q">70 g</span></li>
+      <li>Patate <span class="q">300 g</span></li>
     </ul></div>
-    <div class="box"><div class="bt">Uno spuntino</div><ul>
-      <li><span>1 frutto e mandorle</span><span class="q">15 g</span></li>
-      <li><span>1 frutto e noci</span><span class="q">3 gherigli</span></li>
-      <li><span>Yogurt greco 0%</span><span class="q">150 g</span></li>
-      <li><span>Latte parz. scremato</span><span class="q">250 ml</span></li>
-      <li><span>Carote o finocchio e mandorle</span><span class="q">15 g</span></li>
-      <li><span>Ceci croccanti (friggitrice)</span><span class="q">60 g</span></li>
+    <div class="box"><div class="bt">Spuntini e grassi</div><ul>
+      <li>Mandorle <span class="q">20 g, 16</span></li>
+      <li>Noci <span class="q">18 g, 4 gherigli</span></li>
+      <li>Un frutto <span class="q">mela, pera, 2 kiwi, arancia</span></li>
+      <li>Olio <span class="q">10 g</span></li>
+      <li>Mezzo avocado <span class="q">70 g, al posto dei 10 g d'olio</span></li>
     </ul></div>
   </div>
-  <p class="tnote">Il tonno e lo sgombro in scatola al massimo due volte a settimana, per il sale. La verdura è sempre libera, ma le patate contano come carboidrati e i piselli come legumi.</p>
+  <p class="tnote">Le verdure sono libere: broccoli, spinaci, zucchine, insalata, pomodorini, e i fagiolini che hai in freezer quando vuoi finirli. Le patate invece contano come carboidrati, e 150 g di piselli valgono mezza porzione di legumi.</p>
 
   <h3>Fuori dal menù</h3>
   <ul class="no-list">
@@ -657,37 +485,39 @@
     <li><b>Formaggi stagionati</b>Tranne il cucchiaino di parmigiano.</li>
     <li><b>Dado e granulare</b>Un cubetto contiene circa 4 g di sale.</li>
     <li><b>Salse pronte</b>Maionese, ketchup, pesto in vasetto, soia normale.</li>
-    <li><b>Piatti pronti</b>E i surgelati già conditi.</li>
-    <li><b>Bibite e succhi</b>Anche quelli «senza zuccheri aggiunti»: lo zucchero della frutta c'è comunque.</li>
-    <li><b>Crackers, grissini, fette biscottate</b>Sale e grassi. Il pane integrale li sostituisce.</li>
+    <li><b>Piatti pronti</b>E i surgelati già conditi, minestroni compresi.</li>
+    <li><b>Bibite e succhi</b>Anche quelli «senza zuccheri aggiunti».</li>
+    <li><b>Pane, crackers, grissini normali</b>Solo i Panealba senza sale. I grissini integrali Selex hanno l'olio di palma.</li>
     <li><b>Burro, panna, margarina</b>Il grasso è solo l'olio d'oliva.</li>
     <li><b>Sale iposodico al potassio</b>Non senza il medico: se un giorno prendessi farmaci per la pressione può diventare pericoloso.</li>
   </ul>
 </section>
 
-<section id="misure">
+<section id="avanti">
   <h2>Da qui in avanti</h2>
-  <div class="two" style="margin-top:22px">
+  <div class="two">
     <div class="box">
       <div class="bt">Quando si ritocca la dieta</div>
       <ul>
         <li>Ogni 5 kg persi: il corpo più leggero consuma meno e le porzioni vanno ricalcolate.</li>
         <li>Se il peso resta fermo per tre settimane di fila, sgarri compresi.</li>
-        <li>Se hai fame tutti i giorni alla stessa ora: si sposta qualcosa, non si stringe i denti.</li>
+        <li>Se hai fame tutti i giorni alla stessa ora: si sposta qualcosa, non si stringono i denti.</li>
+        <li>Se un piatto non ti piace: si cambia la ricetta, e la pagina online si aggiorna.</li>
       </ul>
     </div>
     <div class="box">
       <div class="bt">Quando farai il check-up</div>
       <p>Hai detto che prima vuoi metterti a regime, ed è una buona idea: dopo due o tre mesi di dieta gli esami mostrano già l'effetto. Basta un prelievo solo, lo prescrive il medico di base:</p>
-      <p style="font-size:15px;color:var(--ink-2)">glicemia a digiuno, emoglobina glicata, colesterolo totale, HDL, LDL, trigliceridi, creatinina, sodio e potassio, transaminasi, acido urico, esame delle urine.</p>
+      <p>glicemia a digiuno, emoglobina glicata, colesterolo totale, HDL, LDL, trigliceridi, creatinina, sodio e potassio, transaminasi, acido urico, esame delle urine.</p>
     </div>
   </div>
-  <p class="tnote">La scheda di allenamento per la palestra FitActive di Castagnito la facciamo a parte: tre giorni di palestra e due di camminata veloce, come nella griglia della settimana.</p>
 </section>
 
 <footer class="end">
-  <p>Preparata l'11 settembre 2026 sui dati di Mauro: 90 kg, 175 cm, quasi 50 anni, nessun farmaco. Le calorie sono stime.</p>
-  <p>File: C:\Users\mauro\Desktop\La dieta di Mauro.html</p>
+  <p>Rifatta il 26 settembre 2026 sui dati di Mauro: 86,7 kg, 175 cm, quasi 50 anni, nessun farmaco. Le calorie sono stime, fatte sulle etichette dei prodotti lette sul sito del Mercatò Big di Alba e sulle tabelle per i freschi. La scheda di allenamento per la FitActive di Castagnito è a parte.</p>
+  <p>File: C:\Users\mauro\Desktop\La dieta di Mauro - copia.html &middot; Ricette: https://maurobecattini77-hue.github.io/dieta/ricette/</p>
 </footer>
 
 </div>
+</body>
+</html>
