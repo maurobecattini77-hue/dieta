@@ -220,12 +220,12 @@
   nav.toc a:hover { color: var(--olive); }
 
   /* la griglia della settimana: caselle leggere, una riga di colore per il tipo di piatto */
-  .glance { min-width: 880px; table-layout: fixed; border-collapse: separate; border-spacing: 6px 6px; margin: 0 -6px; width: calc(100% + 12px); }
+  .glance { min-width: 880px; table-layout: fixed; border-collapse: separate; border-spacing: 6px 6px; width: 100%; }
   .glance th, .glance td { border: none; padding: 0; }
   .glance thead th { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); text-align: left; padding: 0 2px 2px 13px; }
   .glance tbody th { width: 76px; vertical-align: top; padding: 12px 0 0; font-family: var(--mono); font-size: 10.5px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
   .glance td { height: 1px; vertical-align: top; }
-  .glance a.piatto { display: block; height: 100%; min-height: 104px; padding: 10px 12px 12px 12px; background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--cat); border-radius: 8px; color: var(--ink); font-family: var(--display); font-weight: 500; font-size: 14.5px; line-height: 1.32; letter-spacing: -.005em; transition: background-color .15s ease, border-color .15s ease; }
+  .glance a.piatto { display: block; height: 100%; min-height: 104px; padding: 10px 12px 12px 12px; background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--cat); border-radius: 8px; color: var(--ink); font-family: var(--display); font-weight: 500; font-size: 14px; line-height: 1.32; letter-spacing: -.005em; transition: background-color .15s ease, border-color .15s ease; }
   .glance a.piatto:hover { background: var(--sunk); border-color: var(--line-strong); border-left-color: var(--cat); color: var(--ink); }
   .glance a.piatto .cat { display: block; font-family: var(--mono); font-size: 9.5px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--cat); margin-bottom: 5px; }
   .cat-leg { --cat: var(--legume); }
